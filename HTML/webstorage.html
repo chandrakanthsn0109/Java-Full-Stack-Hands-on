@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Web Storage</title>
+</head>
+<body>
+    <div id="result"></div>
+    <br>
+    <div id="result1"></div>
+    <script>
+        // Storing Data
+        localStorage.setItem("name", "Chandrakanth S N");
+        localStorage.setItem("email", "chandrakanthsn3@gmail.com");
+
+        //Read Data
+        document.getElementById("result").innerHTML="<br>Name: "+localStorage.getItem("name")+"<br>E-mail: "+localStorage.getItem("email")+"<br>";
+
+
+        // Removing Data
+        localStorage.removeItem("name");
+        localStorage.removeItem("email");
+
+        //Read Data
+        document.getElementById("result1").innerHTML="<br>Name: "+localStorage.getItem("name")+"<br>E-mail: "+localStorage.getItem("email")+"<br>";
+
+        //Session Data
+        // sessionStorage.setItem("name", "Chandrakanth S N");
+        // sessionStorage.setItem("email", "chandrakanthsn3@gmail.com");
+
+        // //Read Data
+        // document.getElementById("result").innerHTML="<br>Name: "+sessionStorage.getItem("name")+"<br>E-mail: "+sessionStorage.getItem("email")+"<br>";
+
+    </script>
+</body>
+</html>
