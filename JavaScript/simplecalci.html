@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Simple Calci</title>
+    <script>
+        function calci() {
+            var op = document.getElementById("option").value;
+            let a = parseInt(document.getElementById("num1").value);
+            let b = parseInt(document.getElementById("num2").value);
+            if (op == "Add") {
+                let sum = a + b;
+                document.getElementById("display").innerHTML = "<font color=green><b> Addition:" + sum + "</b></font>";
+            }
+            else if (op == "Sub") {
+                let subt = a - b;
+                document.getElementById("display").innerHTML = "<font color=green><b> Subtraction:" + subt + "</b></font>";
+            }
+            else if (op == "Mul") {
+                let mult = a * b;
+                document.getElementById("display").innerHTML = "<font color=green><b> Multiplication:" + mult + "</b></font>";
+            }
+            else if (op == "Div") {
+                let divi = a / b;
+                document.getElementById("display").innerHTML = "<font color=green><b> Division:" + divi + "</b></font>";
+            }
+            else {
+                document.getElementById("display").innerHTML = "<font color=green><b> Division:" + mult + "</b></font>";
+
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <label for="n1">Enter 1st number</label>
+    <input type="text" name="n1" id="num1"><br><br>
+    <label for="n2">Enter 2nd number</label>
+    <input type="text" name="n2" id="num2"><br><br>
+    <label for="op1">Select option</label>
+    <select name="op1" id="option">
+        <option>Select</option>
+        <option>Add</option>
+        <option>Sub</option>
+        <option>Mul</option>
+        <option>Div</option>
+    </select><br>
+    <button id="res" onclick="calci()">Calculate</button><br><br>
+
+    <div id="display">
+
+    </div>
+</body>
+
+</html>

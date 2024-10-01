@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Destructuring</title>
+    <script>
+        //Destructuring Assignment
+        let employee={eid:100,ename:"chandra",esalary:40000}
+
+        // before ES6
+        let id =employee.eid;
+        let name =employee.ename;
+        let salary =employee.esalary;
+        document.write("<br>Employee ID:"+id);
+        document.write("<br>Employee Name:"+name);
+        document.write("<br>Employee Salary:"+salary);
+
+        // After ES6
+        let {eid,ename,esalary}=employee;
+        document.write("<br><br>Employee ID:"+eid);
+        document.write("<br>Employee Name:"+ename);
+        document.write("<br>Employee Salary:"+esalary);
+
+        let {eid:ei,ename:en,esalary:es}=employee;
+        document.write("<br><br>Employee ID:"+ei);
+        document.write("<br>Employee Name:"+en);
+        document.write("<br>Employee Salary:"+es);
+
+        //Array Destructuring Assignment
+        let fruits=["Mango","Jackfruit","Banana"];
+        let [x,y,z]=fruits;
+        document.write("<br><br>X:"+x);
+        document.write("<br>Y:"+y);
+        document.write("<br>Z:"+z);
+
+        let [a,...c]=fruits;
+        document.write("<br><br>A:"+a);//Mango
+        document.write("<br>C:"+c);//Jackfruit,Banana
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

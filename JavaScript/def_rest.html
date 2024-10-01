@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Default and Rest Parameter</title>
+    <script>
+        //javascript function with default parameter
+        let sum = (x,y=3) => x+y;
+        document.write("Addition:"+sum(5,4));
+        document.write("<br>Addition:"+sum(5));
+        document.write("<br>Addition:"+sum());
+
+        //javascript function with default parameter
+        let sub = (x=2,y=3) => x-y;
+        document.write("<br>Subtraction:"+sub(5,4));
+        document.write("<br>Subtraction:"+sub(5));
+        document.write("<br>Subtraction:"+sub());
+
+        //javascript function with rest parameter
+        var add=(...arr) => {
+            document.write("<br>Total number of elements:"+arr.length);
+            let sum=0;
+            for(let i of arr){
+                sum+=i;
+            }
+            return sum;
+        }
+        document.write("<br>Sum of Array elements:"+add(5,10,7,18,93,333,45,33,8));
+
+        //javascript function with rest parameter
+        var add=(x,y,...arr) => {
+            document.write(`<br>Total number of elements: ${arr.length}`);
+            let sum=0;
+            for(let i of arr){
+                sum+=i;
+            }
+            return sum;
+        }
+        document.write("<br>Sum of Array elements:"+add(5,10,7,18,93,333,45,33,8));
+
+        //javascript template literals
+        var firstname = "Chandrakanth";
+        var lastname="S N";
+        document.write("<br>FirstName: "+firstname);
+        document.write("<br>LasttName: "+lastname);
+        document.write(`<br>FirstName: ${firstname}`);
+        document.write(`<br>LasttName: ${lastname}`);
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

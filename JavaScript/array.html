@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Array</title>
+    <script>
+        //javascript Arrays
+        var names = ["Chandrakanth","Lakshmi Pathi","Preethi","Gowtham","Priya"];
+        document.write("Array Length:"+names.length);
+        document.write("<br>Array Elements:"+names);
+
+        for(let i of names){
+            document.write("<br>"+i);     
+        }
+
+        names[0]="valan";
+        document.write("<br>Array Elements:"+names);
+
+        names.push("Chandra");//add element to last
+        document.write("<br>Array Elements:"+names);
+       
+        names.pop();//remove element from last
+        document.write("<br>Array Elements:"+names);
+
+        names.unshift("Chandra");//add element to first
+        document.write("<br>Array Elements:"+names);
+       
+        names.shift();//remove element from first
+        document.write("<br>Array Elements:"+names);
+
+        names.splice(1,3);//remove elements from index 1 to three elements
+        document.write("<br>Array Elements:"+names);
+
+        names.length=4;
+        document.write("<br>Array Elements:"+names);
+
+        names.length=1;
+        document.write("<br>Array Elements:"+names);
+
+        var cricketers = new Array("MS Dhoni","Virat","Bumbrah");
+        document.write("Array Length:"+cricketers.length);
+        document.write("<br>Array Elements:"+cricketers);
+
+        for(let i of cricketers){
+            document.write("<br>"+i);     
+        }
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Arrow Function</title>
+    <script>
+        //javascript function as a variable
+        let sum=function (a,b){return a+b;}
+        document.write("Addition: "+sum(7,3));
+
+        //javascript arrow function with one statement
+        let mul=(x,y) => x*y;
+        document.write("<br>Multiplication: "+mul(7,3));
+
+        //javascript arrow function with multiple statement
+        let fact = (n) => {
+            let f=1;
+            for(let i=1;i<=n;i++){
+                f*=i;
+            }
+            return f;      
+        }
+        document.write("<br>Factorial: "+fact(3));
+
+        //javascript arrow function without parameters
+        var greet = () => "Welcome to JavaScript";
+        document.write("<br>"+greet());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

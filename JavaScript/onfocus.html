@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Factorial Table Onfocus</title>
+    <script>
+        function pft() {
+            let num = parseInt(document.getElementById("no").value);
+            var fact = 1;
+            for (let i = 1; i <= num; i++) {
+                fact = fact * i;
+                document.getElementById("res").innerHTML += "<tr><td>" + i + "</td><td>" + fact + "</td></tr>";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text" id="no" value="Enter the Number:" onfocus="this.value=''" onblur="pft()">
+     <br><br>
+    
+    <table id="res" border="2px solid black">
+        <tr>
+            <th>Number</th>
+            <th>Factorial</th>
+        </tr>
+
+    </table>
+
+</body>
+
+</html>

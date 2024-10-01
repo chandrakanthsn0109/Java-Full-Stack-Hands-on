@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dynamic Input</title>
+    <script>
+        function findFactorial(){
+          let n = parseInt(document.getElementById("n").value);
+          var fact=1;
+          for(let i=n;i>=1;i--){
+               fact=fact*i;
+          }
+          document.write("<b>Factorial: "+fact);
+        }
+    </script>
+</head>
+<body>
+    Enter the Number <input type="text" id="n"><br>
+    <button onclick="findFactorial()">Find Factorial</button>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>About JS functions</title>
+    <script>
+        var a=10,b=20;//Global scope variable
+        function myfun(){
+            document.write("<b>Welcome to JavaScript Function</b>");
+        }
+        function add(){
+            let sum=a+b;//Local scope variable
+            document.write("Addition :"+ sum);
+
+            const pi=3.142;
+        }
+    </script>
+</head>
+<body>
+    <button onclick="myfun()">Greeting</button>
+    <button onclick="add()">Find sum</button>
+</body>
+</html>
