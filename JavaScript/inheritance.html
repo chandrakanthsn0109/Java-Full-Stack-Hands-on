@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Inheritance</title>
+</head>
+
+<body>
+    <script>
+        class Person {
+            constructor(name, email) {
+                this.name = name;
+                this.email = email;
+            }
+            displayPersonDetails() {
+                document.write("<br> Name: " + this.name);
+                document.write("<br> Email: " + this.email);
+            }
+
+        }
+        class Employee extends Person {
+            constructor(name, email, eid, esalary) {
+                super(name, email);
+                this.eid = eid;
+                this.esalary = esalary;
+            }
+
+            displayEmployeeDetails() {
+                super.displayPersonDetails();
+                document.write("<br> Employee ID: " + this.eid);
+                document.write("<br> Employee Salary: " + this.esalary + "<br>");
+            }
+        }
+
+        let person1 = new Employee("Chandra", "csn292@gmail.com", 100, 20000);
+        let person2 = new Employee("Srikanth", "sri922@gmail.com", 101, 30000);
+
+        person1.displayEmployeeDetails();
+        person2.displayEmployeeDetails();
+    </script>
+</body>
+
+</html>

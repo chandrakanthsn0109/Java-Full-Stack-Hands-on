@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Polymorphism</title>
+</head>
+<body>
+    <script>
+        class Animal{
+            move(){
+                document.write("<br> All animals will move from one place to another place");
+            }
+        }
+        class Dog extends Animal{
+            move(){
+                document.write("<br> Dog will move from one place to another place by walk");
+            }
+        }
+        class Bird extends Animal{
+            move(){
+                document.write("<br> Bird will move from one place to another place by fly");
+            }
+        }
+
+        let dog = new Dog();
+        dog.move();
+        
+        let bird = new Bird();
+        bird.move();
+    </script>
+</body>
+</html>

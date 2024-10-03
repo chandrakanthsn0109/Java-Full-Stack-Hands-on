@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>DOM</title>
+    <script>
+        var flag = false;
+        function showHide() {
+            if (flag == false) {
+                document.getElementById("MyDiv").style.visibility = "hidden";
+            }
+            else {
+                document.getElementById("MyDiv").style.visibility = "visible";
+            }
+            flag = !flag;
+
+            let animals = ["Dog", "Cat", "Fish", "Bird"];
+            var myListItems = "<ul>";
+            for (let animal of animals) {
+                myListItems += "<li onclick=setImage('" + animal + "')>" + animal + "</li>";
+            }
+            myListItems += "</ul>";
+            document.getElementById("MyDiv").innerHTML = myListItems;
+
+
+        }
+        function setImage(animal) {
+            // alert("k");
+            document.getElementById("MyDiv1").innerHTML = "<br><center>" + animal+":</center>";
+            switch(animal){
+                case 'Dog':document.getElementById("MyDiv1").innerHTML+="<br><center><img src='dog.png' width=200 height=100></center>";
+                break;
+                case 'Cat':document.getElementById("MyDiv1").innerHTML+="<br><center><img src='cat.png' width=200 height=100></center>";
+                break;
+                case 'Fish':document.getElementById("MyDiv1").innerHTML+="<br><center><img src='fish.png' width=200 height=100></center>";
+                break;
+                case 'Bird':document.getElementById("MyDiv1").innerHTML+="<br><center><img src='bird.png' width=200 height=100></center>";
+                break;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="showHide()">Show or Hide</button><br><br>
+    <div id="MyDiv" style="width: 300px;height: 200px; border: 2px solid orange; border-radius: 25px;"></div>
+    <br><br>
+    <div id="MyDiv1" style="width: 300px;height: 200px; border: 2px solid orange; border-radius: 25px;"></div>
+</body>
+
+</html>

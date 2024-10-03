@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Map</title>
+</head>
+<body>
+    <script>
+        //Javascript map
+        let map1=new Map();
+
+        map1.set(1,"Java");
+        map1.set(2,"Python");
+        map1.set(3,"C#");
+
+        let map2 = new Map([[7,"Dhoni"],[18,"Virat"],[45,"Rohith"]]);
+
+        //Iterating Map
+        for(let [k,v] of map2){
+            document.write("<br>"+k+"=>"+v);
+        }
+
+        for(let [k,v] of map1){
+            document.write(`<br> ${k} => ${v}`);
+        }
+
+        for(let k of map2.keys()){
+            document.write("<br>"+k+"=>"+map2.get(k));
+        }
+
+        //Deleting
+        map1.delete(2);
+        for(let k of map1.keys()){
+            document.write("<br>"+k+"=>"+map1.get(k));
+        }
+
+        //storing objects into maps
+
+        let map3=new Map();
+        map3.set(100,{id:100,name:"Sri",salary:2000});
+        map3.set(101,{id:101,name:"Chandra",salary:3000});
+        map3.set(102,{id:102,name:"manu",salary:4000});
+
+        document.write("<br>"+map3);
+
+        //Displaying object values
+        for(let [key , emp] of map3){
+            let {id,name,salary}=emp;
+            document.write("<br>"+key+"=> { id: "+id+", Name: "+name+" , Salary: "+salary+"}");
+        }
+
+        for(let [key , emp] of map3){
+            let {id,name,salary}=emp;
+            document.write(`<br> ${key} => { id: ${id} , Name: ${name} , Salary: ${salary} }`);
+        }
+
+        let map4=new WeakMap();
+        let key1={id:100}
+        map4.set(key1,{id:100,name:"Sri",salary:2000});
+        map4.set({id:101},{id:101,name:"Chandra",salary:3000});
+        map4.set({id:102},{id:102,name:"manu",salary:4000});
+
+        document.write("<br>"+map4);
+        document.write("<br>"+map4.has(key1));
+
+        map4.delete(key1)
+        document.write("<br>"+map4.has(key1));
+    </script>
+</body>
+</html>

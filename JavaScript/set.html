@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Sets</title>
+</head>
+
+<body>
+    <script>
+        //javascript sets
+        let set1 = new Set();//Empty set
+
+        let set2 = new Set([10, 20, "Chandra"]);
+        for (let f of set2.values()) {
+            document.write("<br> " + f);
+        }
+
+        set2.add(7);
+        set2.add(20);//Adding duplicate element
+        for (let f of set2.values()) {
+            document.write("<br> " + f);
+        }
+        document.write("<br> " + set2.has(10));//true
+
+        set2.delete(10);
+        document.write("<br> " + set2.has(10));//false
+
+        set2.clear();//to remove all elements
+
+        //javascript weakset
+        let set3 =new WeakSet();
+
+        let employee1 = {id:100,name:"Chandra",salary:2000};
+        let employee2 = {id:101,name:"Kanth",salary:3000};
+
+        set3.add(employee1);
+        set3.add(employee2);
+
+        document.write("<br>"+set3.has(employee2));
+
+        set3.delete(employee2);
+        document.write("<br>"+set3.has(employee2));
+
+        
+        
+    </script>
+</body>
+
+</html>
