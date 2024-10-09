@@ -1,0 +1,16 @@
+<br><button (click)="changeFlag()">Show or Hide!</button>
+<br><br>
+<div *ngIf="flag" style="border: 2px solid salmon; width: 550px; height: 550px;">
+    <ul>
+        <li *ngFor="let e of arr" (click)="setSelectedItem(e)">{{e}}</li>
+    </ul>
+
+    <b>you have Selected:{{selectedItem}}</b>
+    <div [ngSwitch]="selectedItem">
+        <img src="msd.png" alt="MSD" *ngSwitchCase="'MS Dhoni'" width="150" height="150">
+        <img src="vk.png" alt="VK18" *ngSwitchCase="'VK'" width="150" height="150">
+        <img src="hit.png" alt="Hitman" *ngSwitchCase="'Hitman'" width="150" height="150">
+        <font *ngSwitchDefault>Invalid</font>
+
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<div>
+    <h2>Factorial Table</h2>
+    <label for="limit">Enter Number:</label>
+    <input type="number" [(ngModel)]="limit" (input)="generateFactorialTable()" />
+  <br><br>
+    <table border="2">
+        <tr>
+          <th>Number</th>
+          <th>Factorial</th>
+        </tr>
+        <tr *ngFor="let i of factorials">
+          <td>{{ i.number }}</td>
+          <td>{{ i.factorial }}</td>
+        </tr>
+    </table>
+  </div>

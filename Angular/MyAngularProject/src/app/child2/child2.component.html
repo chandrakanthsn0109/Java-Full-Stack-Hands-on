@@ -1,0 +1,17 @@
+<h1 id="demo">One Way Data Binding - Interpolation</h1>
+<br>Name : {{name}}
+<br>Age : {{age}}
+<br>Salary : {{age}}
+<br>Sum : {{add(20,7)}}
+<br>Sum : <input type="text" value="{{add(20,7)}}">
+<br>Name : <input type="text" value="{{name}}">
+<br><img src="{{imagepath}}" alt="Elephant" width="{{width}}" height="{{height}}">
+
+<br><br>Sum : <input type="text" [value]="add(20,7)">
+<br><br>Name : <input type="text"  [value]="name">
+<br><br><img  [src]="imagepath" alt="Elephant"  [width]="width"  [height]="height">
+<br><br><button (click)="changename()">{{btnTxt}}</button>
+<br><br><button (click)="changeimg()">changeImage</button>
+
+<br><br>Enter your first Name: <input type="text" [(ngModel)]="fname">
+<br><br>Welcome {{fname}}
