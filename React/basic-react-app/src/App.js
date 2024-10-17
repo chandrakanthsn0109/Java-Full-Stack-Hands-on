@@ -1,27 +1,39 @@
-import {Component} from 'react';
-class App extends Component{
-  render(){
-    return(
+// import Child2 from './Child2';
+// import Child3 from './States';
+
+import Form from "./Forms";
+
+// import Calculator from "./simpleCalculate";
+
+// import Sum from "./Sum";
+
+// import Update from "./updatingStates";
+
+function App(props) {
+  // let name="Chandrakanth";
+  // name="Srikanth"
+    return (
       <div>
-        <label for="first">Enter First Number:</label>
-        <input type='text' id="first"></input><br></br><br></br>
-        <label for="second">Enter Second Number:</label>
-        <input type='text' id="second"></input><br></br><br></br>
-        <label for="second">Select Option:</label>
-        <select>
-          <option>select</option>
-          <option>+</option>
-          <option>-</option>
-          <option>*</option>
-          <option>/</option>
-        </select><br></br><br></br>
-        <button>Calculate</button>
-        </div>
+        <Form></Form>
+        {/* <Calculator></Calculator> */}
+        {/* <Sum></Sum> */}
+        {/* <Update></Update> */}
+        {/* <b>App Component</b>
+        <br></br>User Id:{props.uid} */}
+        {/* <Child3 name={name} email="csn299@gmail.com"></Child3> */}
+
+      </div>
     );
   }
-}
 
 export default App;
+
+
+
+
+
+//Functional component and Class component
+// export default App;
 
 // import './App.css';
 // import Child2 from './Child2';
