@@ -1,7 +1,8 @@
 // import Child2 from './Child2';
 // import Child3 from './States';
 
-import Effect from "./Effect";
+import UseRef from "./UseRef";
+// import Effect from "./Effect";
 // import LifeCycle from "./LifeCycle";
 
 // import Counter from "./Hook";
@@ -27,7 +28,8 @@ function App(props) {
   // name="Srikanth"
     return (
       <div>
-        <Effect></Effect>
+        <UseRef></UseRef>
+        {/* <Effect></Effect> */}
         {/* <LifeCycle></LifeCycle> */}
         {/* <Name></Name> */}
         {/* <Counter></Counter> */}
