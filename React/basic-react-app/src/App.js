@@ -1,7 +1,20 @@
 // import Child2 from './Child2';
 // import Child3 from './States';
 
-import Form from "./Forms";
+import Effect from "./Effect";
+// import LifeCycle from "./LifeCycle";
+
+// import Counter from "./Hook";
+// import Name from "./Name";
+
+// import Ternary from "./Ternary";
+
+// import LogicalAnd from "./LogicalAnd";
+// import RenderIf from "./RenderIf";
+
+// import Login from "./Login";
+
+// import Form from "./Forms";
 
 // import Calculator from "./simpleCalculate";
 
@@ -14,7 +27,15 @@ function App(props) {
   // name="Srikanth"
     return (
       <div>
-        <Form></Form>
+        <Effect></Effect>
+        {/* <LifeCycle></LifeCycle> */}
+        {/* <Name></Name> */}
+        {/* <Counter></Counter> */}
+        {/* <Ternary></Ternary> */}
+        {/* <LogicalAnd input="10"></LogicalAnd> */}
+        {/* <RenderIf input="10"></RenderIf> */}
+        {/* <Login></Login> */}
+        {/* <Form></Form> */}
         {/* <Calculator></Calculator> */}
         {/* <Sum></Sum> */}
         {/* <Update></Update> */}
