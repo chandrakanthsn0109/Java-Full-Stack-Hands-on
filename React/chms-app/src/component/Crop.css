@@ -1,0 +1,42 @@
+#myForm{
+    
+    font-size: 20px;
+    color: white;
+}
+
+#res{
+    color: chartreuse;
+    margin-left: 35%;
+    font-size: 20px;
+    font-weight: bold;
+}
+.findAll{
+    margin-left:5% ;
+    margin-top: 20px;
+    font-size: 20px;
+    color: orange;
+}
+table,th,td{
+    border: 2px solid brown;
+    text-align: center;
+    color: chartreuse;
+    width: 1000px;
+}
+h1{
+    text-align: center;
+    color:chartreuse;
+}
+tr:hover {
+    background-color: orange;
+}
+#bt{
+    margin-left: 43%;
+    margin-top: 1%;
+}
+.br{
+    background-image: url('C:\BIWW\Assignments\React\chms-app\public\image.png'); 
+    background-size: cover;
+    height: 800px;
+    width: 100%;
+ 
+}

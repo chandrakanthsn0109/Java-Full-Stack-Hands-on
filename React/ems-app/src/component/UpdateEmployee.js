@@ -1,6 +1,8 @@
 import { Component } from 'react';
-import './form.css';
-class Form extends Component {
+import "./Employee.css";
+import Employee from '../model/Employee';
+import axios from "axios";
+export default class UpdateEmployee extends Component {
 
     constructor() {
         super();
@@ -72,7 +74,6 @@ class Form extends Component {
     }
     GetResult = (e) => {
         e.preventDefault();
-        
         let error = this.validateEid(this.state.eid);
         this.setState({eidError:error})
 
@@ -83,7 +84,17 @@ class Form extends Component {
         this.setState({esalaryError:error2})
 
         if(!error&&!error1&&!error2){
-            this.setState({ flag: true })
+            this.setState({ flag: true });
+            let employee = new Employee();
+            employee.setId(this.state.eid);
+            employee.setName(this.state.ename);
+            employee.setSalary(this.state.esalary);
+
+            axios.put("http://localhost:3004/employees/"+this.state.eid, employee)
+                .then(() => {
+                    document.getElementById("res").innerHTML = "<b>Object Updated Successfully</b>";
+                })
+            e.preventDefault();
         }
     }
     render() {
@@ -107,21 +118,13 @@ class Form extends Component {
                     <input type='text' value={this.state.esalary} onChange={this.changeSalary} id="in" class="form-control border border-info"></input>
                     <font color="red" id="in"><b>{this.state.esalaryError}</b></font>
                     </div>
-                    <button onClick={this.GetResult} id="bt" class="btn btn-success">Submit</button>&nbsp;
-                    <button  class="btn btn-primary">Insert</button>&nbsp;
-                    <button  class="btn btn-success">Update</button>&nbsp;
-                    <button  class="btn btn-danger">Delete</button>&nbsp;
-                    <button  class="btn btn-info">Find</button>&nbsp;
-                    <button  class="btn btn-warning">Find All</button>&nbsp;
+                    <button onClick={this.GetResult} id="bt" class="btn btn-success">Update</button>&nbsp;
                     <br></br><br></br>
-
                 </form>
                 {this.state.flag ?
                 
                     <div id="res">
-                        <br></br>Employee Id:{this.state.eid}
-                        <br></br>Employee Name:{this.state.ename}
-                        <br></br>Employee Salary:{this.state.esalary}
+                        
                     </div>
                     : ''
                 }
@@ -130,4 +133,3 @@ class Form extends Component {
         );
     }
 }
-export default Form;
