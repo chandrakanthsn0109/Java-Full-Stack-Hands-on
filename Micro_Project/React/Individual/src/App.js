@@ -1,11 +1,10 @@
 import './App.css';
-
-import EmployeeHome from './component/EmployeeHome';
+import CropHome from './component/CropHome';
 
 function App() {
   return (
-    <div>
-      <EmployeeHome></EmployeeHome>
+    <div className="App">
+      <CropHome></CropHome>
     </div>
   );
 }
