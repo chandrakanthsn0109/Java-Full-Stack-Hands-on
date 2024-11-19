@@ -8,13 +8,13 @@
 <title>JSP</title>
 </head>
 <body>
-	<form action="Calculator" method="post">
-		Enter num1<input type="text" name="n1"><br> 
-		Enter num2<input type="text" name="n2"><br> 
-		<input type="submit" value="Addition" name="btn"><br> 
-		<input type="submit" value="Subtraction" name="btn"><br> 
-        <input type="submit" value="Multiplication" name="btn"><br> 
-        <input type="submit" value="Division" name="btn"><br> 
+	<form action="CalculatorResult.jsp">
+		Enter num1<input type="text" name="n1"><br><br> 
+		Enter num2<input type="txt" name="n2"><br><br>
+		<input type="submit" value="Addition" name="btn">&nbsp
+		<input type="submit" value="Subtraction" name="btn">&nbsp 
+        <input type="submit" value="Multiplication" name="btn">&nbsp
+        <input type="submit" value="Division" name="btn">&nbsp 
 
 	</form>
 </body>

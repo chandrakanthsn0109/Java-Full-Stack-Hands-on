@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<form action="LoginServlet" method="post">
+<form action="LoginAction.jsp" method="post">
 Enter Username:<input type="text" name="uname"><br><br>
 Enter Password:<input type="password" name="pwd"><br><br>
 <input type="submit" value="Login" name="btn">
