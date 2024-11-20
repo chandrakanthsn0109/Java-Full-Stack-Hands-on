@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="emp1" class="com.spring.bean.Employee">
+		<property name="eid" value="101" />
+		<property name="ename" value="Chandra" />
+		<property name="esalary" value="15000" />
+	</bean>
+
+	<bean id="emp2" class="com.spring.bean.Employee">
+		<property name="eid" value="0" />
+		<property name="ename" value="null" />
+		<property name="esalary" value="0" />
+	</bean>
+
+	<bean id="emp3" class="com.spring.bean.Employee">
+		<constructor-arg index="0" value="301"></constructor-arg><!-- 
+			Injecting Primitive value -->
+		<constructor-arg index="1" value="Raju"></constructor-arg>
+		<constructor-arg index="2" value="30000"></constructor-arg>
+		<constructor-arg index="3" ref="add2"></constructor-arg><!-- Injecting 
+			object -->
+		<constructor-arg index="4" ref="dpt3"></constructor-arg>
+	</bean>
+
+	<!-- <bean id="add1" class="com.spring.bean.Address"> <constructor-arg index="0" 
+		value="Mysore"></constructor-arg> <constructor-arg index="1" value="Karnataka"></constructor-arg> 
+		</bean> -->
+
+	<bean id="add1" class="com.spring.bean.Address">
+		<property name="city" value="Mysore" />
+		<property name="state" value="Karnataka" />
+	</bean>
+
+	<bean id="add2" class="com.spring.bean.Address">
+		<property name="city" value="Banglore" />
+		<property name="state" value="Karnataka" />
+	</bean>
+
+	<bean id="emp4" class="com.spring.bean.Employee">
+		<property name="eid" value="501" />
+		<property name="ename" value="Manu" />
+		<property name="esalary" value="50000" />
+		<property name="add" ref="add1" />
+	</bean>
+
+	<bean id="dpt1" class="com.spring.bean.Department">
+		<property name="dno" value="11" />
+		<property name="dname" value="Delivery" />
+	</bean>
+
+	<bean id="dpt2" class="com.spring.bean.Department">
+		<property name="dno" value="12" />
+		<property name="dname" value="BigBang" />
+	</bean>
+
+	<bean id="dpt3" class="com.spring.bean.Department">
+		<property name="dno" value="0" />
+		<property name="dname" value="null" />
+	</bean>
+
+	<bean id="emp5" class="com.spring.bean.Employee">
+		<property name="eid" value="501" />
+		<property name="ename" value="Manu" />
+		<property name="esalary" value="50000" />
+		<property name="add" ref="add1" />
+		<property name="dept" ref="dpt1" />
+	</bean>
+
+	<bean id="ques1" class="com.spring.bean.Question">
+		<property name="qid" value="1" />
+		<property name="question"
+			value="Who is Captain of India Cricket team when India lift the WorldCup in 2011?" />
+		<property name="answers">
+			<list>
+				<value>MS Dhoni</value>
+				<value>Sachin Tendulkar</value>
+				<value>Yuraj Sing</value>
+				<value>Virat Kohli</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="ques2" class="com.spring.bean.Question">
+		<constructor-arg index="0" value="2"></constructor-arg>
+		<constructor-arg index="1"
+			value="Who is the president of America"></constructor-arg>
+		<constructor-arg index="2">
+			<list>
+				<value>Kamala Haris</value>
+				<value>Donald Trumph</value>
+				<value>Obama</value>
+				<value>Narenda Modi</value>
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="b1" class="com.spring.bean.Book" autowire="byName">
+		<property name="books">
+			<map>
+				<entry key="Kuvempu" value="Sriramayana Darsanam"></entry>
+				<entry key="DA RA Bendre" value="Naku Thanathi"></entry>
+			</map>
+		</property>
+	</bean>
+
+	<!-- <bean id="b2" class="com.spring.bean.Book"> <constructor-arg index="0"> 
+		<map> <entry key=" K. Shivarama Karanth" value="Mookajjiya Kanasugalu"></entry> 
+		<entry key="Masti Venkatesha Iyengar" value="Sanna Kathegalu"></entry> </map> 
+		</constructor-arg> </bean> -->
+
+	<bean id="authors" class="com.spring.bean.Author">
+		<property name="authorname" value="Kuvempu" />
+		<property name="location" value="Kuppali" />
+	</bean>
+
+	 <bean id="auth2" class="com.spring.bean.Author">
+		<property name="authorname" value="Chandra" />
+		<property name="location" value="Mysore" />
+	</bean>
+
+	<!--<bean id="auth3" class="com.spring.bean.Author">
+		<property name="authorname" value="Lakshmi" />
+		<property name="location" value="Nellur" />
+	</bean>-->
+
+	<!--  <bean id="b3" class="com.spring.bean.Book">
+		<property name="books">
+			<map>
+				<entry key="Kuvempu" value="Sriramayana Darsanam"></entry>
+				<entry key="DA RA Bendre" value="Naku Thanathi"></entry>
+			</map>
+		</property>
+		<property name="authors">
+			<list>
+				<ref bean="auth1" />
+				<ref bean="auth2" />
+				<ref bean="auth3" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="b4" class="com.spring.bean.Book">
+		<constructor-arg index="0">
+			<map>
+				<entry key="Kuvempu" value="Sriramayana Darsanam"></entry>
+				<entry key="DA RA Bendre" value="Naku Thanathi"></entry>
+			</map>
+		</constructor-arg>
+		<constructor-arg index="1">
+			<list>
+				<ref bean="auth1" />
+				<ref bean="auth2" />
+				<ref bean="auth3" />
+			</list>
+		</constructor-arg>
+	</bean>-->
+
+	<!-- Hello Bean -->
+	<bean id="hello" class="com.spring.bean.Hello">
+		<property name="msg" value="Hi"></property>
+	</bean>
+</beans>
