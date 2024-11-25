@@ -37,10 +37,12 @@ public class EmployeeController extends HttpServlet {
 			Employee emp = new Employee(eid,ename,esal);
 			int n = dao.insertEmployee(emp);
 			if (n == 1) {
-				out.println("<br><center><font color='green'><h3>Record Inserted</h3></font></center>");
+//				out.println("<br><center><font color='green'><h3>Record Inserted</h3></font></center>");
+				response.sendRedirect("Result.jsp?status=success&msg=Record Inserted Successfully");
 			} 
 			else {
-				out.println("<br><center><font color='red'><h3>Record Not Inserted</h3></font></center>");
+//				out.println("<br><center><font color='red'><h3>Record Not Inserted</h3></font></center>");
+				response.sendRedirect("Result.jsp?status=success&msg=Record Not Inserted");
 			}
 
 		}
