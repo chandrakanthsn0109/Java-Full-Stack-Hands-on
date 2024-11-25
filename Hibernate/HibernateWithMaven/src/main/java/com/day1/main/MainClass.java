@@ -110,7 +110,7 @@ public class MainClass {
 
 		List<Employee> employees = query.list();
 			System.out.println(employees);
-		
+  		
 		tn.commit();
 		session.close();
 		factory.close();
