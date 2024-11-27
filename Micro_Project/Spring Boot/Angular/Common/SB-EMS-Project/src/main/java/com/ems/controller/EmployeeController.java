@@ -17,7 +17,7 @@ import com.ems.model.Employee;
 import com.ems.repo.EmployeeRepo;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000/")
+@CrossOrigin(origins = "http://localhost:4200/")
 public class EmployeeController {
 
 //	@GetMapping("/hello") //	@RequestMapping(method = RequestMethod.GET)

@@ -1,0 +1,87 @@
+
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+</head>
+
+<body>
+    <h3 style="text-align: center;">Department System</h3>
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="">
+        <form #DepartmentForm="ngForm">
+          <div class="form-group">
+            <label for="Department Id">
+              Department Number
+            </label>
+            <input type="text" class="form-control" name="depNo" #depNo="ngModel" ngModel required pattern="[0-9]+" />
+          </div>
+
+
+          <div *ngIf="depNo.touched">
+            <div *ngIf="depNo.errors?.['required']">
+              <b style="color: red;">Department Number Required.</b>
+            </div>
+            <div *ngIf="depNo.errors?.['pattern']">
+              <font color="red"><b>Invalid Department Number.</b></font>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="Department Name">
+              Department Name
+            </label>
+            <input type="text" class="form-control" name="depName" #depName="ngModel" ngModel required
+              pattern="[a-zA-Z]+" />
+          </div>
+          <div *ngIf="depName.touched">
+            <div *ngIf="depName.errors?.['required']">
+              <b style="color: red;">Department Name Required.</b>
+            </div>
+            <div *ngIf="depName.errors?.['pattern']">
+              <font color="red"><b>Invalid Department Name.</b></font>
+            </div>
+          </div>
+        <br>
+          <button class="btn btn-success" (click)="insertDepartment(DepartmentForm.value)">
+            Insert
+          </button>
+          &nbsp;&nbsp;
+          <button class="btn btn-primary" (click)="updateDepartment(DepartmentForm.value)">
+            Update
+          </button>&nbsp;&nbsp;
+           <button class="btn btn-danger" (click)="deleteDepartment(DepartmentForm.value)">
+            Delete
+          </button>&nbsp;&nbsp;
+          <button class="btn btn-warning" (click)="findDepartment(DepartmentForm.value)">
+            Find
+          </button>
+          &nbsp;&nbsp;
+          <button class="btn btn-info" (click)="findAllDepartment()">
+            Find All
+          </button> &nbsp;&nbsp;
+        </form>
+
+      </div>
+    </div>
+  </div>
+  <br><br>
+  <!-- <p align="center"><font color="green"><b>{{result}}</b></font></p>
+  <table align="center" width="60%" *ngIf="flag">
+    <tr>
+    <th>Employee Id</th>
+    <th>Employee Name</th>
+    <th>Employee Salary</th>
+    </tr>
+    <tr *ngFor="let emp of employeeArr">
+      <td>{{emp.empId}}</td>
+      <td>{{emp.empName}}</td>
+      <td>{{emp.empSalary}}</td>
+    </tr>
+  </table> -->
+
+</body>
+
+</html>
+
