@@ -29,7 +29,7 @@ export class EmployeeService {
   }
   findEmployee(eid: number) {
     this.http.get<Employee>(this.url + "find-employee/" + eid).subscribe(emp => this.employee = emp);
-    console.log(this.employee);
+    // console.log(this.employee);
     return this.employee;
   }
   findAllEmployee() {

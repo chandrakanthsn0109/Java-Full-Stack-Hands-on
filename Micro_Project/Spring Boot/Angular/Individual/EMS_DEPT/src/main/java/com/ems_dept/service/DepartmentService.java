@@ -25,12 +25,12 @@ public class DepartmentService {
 		drepo.save(dept);
 	}
 
-	public void deleteDepartment(int dno) {
-		drepo.deleteById(dno);
+	public void deleteDepartment(int depNo) {
+		drepo.deleteById(depNo);
 	}
 
 	public Department findDepartment(int depNo) {
-		return drepo.findById(depNo).get();
+		return (Department)drepo.findById(depNo).get();
 	}
 
 	public List<Department> findAllDepartment() {

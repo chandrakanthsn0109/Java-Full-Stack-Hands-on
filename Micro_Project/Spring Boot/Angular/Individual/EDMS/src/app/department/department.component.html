@@ -33,7 +33,7 @@
               Department Name
             </label>
             <input type="text" class="form-control" name="depName" #depName="ngModel" ngModel required
-              pattern="[a-zA-Z]+" />
+              pattern="[a-zA-Z ]+" />
           </div>
           <div *ngIf="depName.touched">
             <div *ngIf="depName.errors?.['required']">
@@ -67,19 +67,17 @@
     </div>
   </div>
   <br><br>
-  <!-- <p align="center"><font color="green"><b>{{result}}</b></font></p>
+  <p align="center"><font color="green"><b>{{result}}</b></font></p>
   <table align="center" width="60%" *ngIf="flag">
     <tr>
-    <th>Employee Id</th>
-    <th>Employee Name</th>
-    <th>Employee Salary</th>
+    <th>Department Number</th>
+    <th>Department Name</th>
     </tr>
-    <tr *ngFor="let emp of employeeArr">
-      <td>{{emp.empId}}</td>
-      <td>{{emp.empName}}</td>
-      <td>{{emp.empSalary}}</td>
+    <tr *ngFor="let dep of departmentArr">
+      <td>{{dep.depNo}}</td>
+      <td>{{dep.depName}}</td>
     </tr>
-  </table> -->
+  </table>
 
 </body>
 

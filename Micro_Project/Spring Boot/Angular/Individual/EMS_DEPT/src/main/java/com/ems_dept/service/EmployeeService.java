@@ -33,7 +33,7 @@ public class EmployeeService {
 
 	public Employee findEmployee(int empId) {
 //		System.out.println(empId);
-		return (Employee)repo.findById(empId).get();
+		return repo.findById(empId).get();
 	}
 	
 	public List<Employee> findAllEmployee() {

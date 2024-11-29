@@ -1,0 +1,43 @@
+#myForm{
+    background-image: url('C:\BIWW\Assignments\React\basic-react-app\public\image.png'); 
+    background-size: cover;
+    height: 800px;
+    width: 100%;
+    
+}
+
+  #res{
+    color: crimson;
+    margin-left: 10%;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#res1{
+    color: crimson;
+    margin-left: 5%;
+    font-size: 20px;
+    font-weight: bold;
+}
+.findAll{
+    margin-left:25% ;
+    width: 60%;
+    font-size: 20px;
+    color: orange;
+}
+table,th,td{
+    border: 2px solid brown;
+    text-align: center;
+}
+
+#emp{
+    margin-left: 5%;
+}
+
+#dep{
+    margin-left: 5%;
+}
+
+h1{
+    color: red;
+}

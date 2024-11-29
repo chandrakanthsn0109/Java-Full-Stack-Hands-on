@@ -38,9 +38,9 @@ public class DepartmentController {
 		depSer.updateDepartment(dept);
 	}
 	
-	@DeleteMapping("/delete-department")
-	public void doDelete(@RequestBody Department dept) {
-		depSer.deleteDepartment(dept.getDepNo());
+	@DeleteMapping("/delete-department/{depNo}")
+	public void doDelete(@PathVariable("depNo") int depNo) {
+		depSer.deleteDepartment(depNo);
 	}
 	
 	@GetMapping("/find-department/{depNo}")

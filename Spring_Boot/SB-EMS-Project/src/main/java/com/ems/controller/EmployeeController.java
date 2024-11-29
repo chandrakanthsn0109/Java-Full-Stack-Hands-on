@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -33,48 +34,53 @@ public class EmployeeController {
 	}
 
 	@PostMapping("/create-employee")
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	public void doInsert(@RequestBody Employee employee) {
 		repo.save(employee);
 	}
 
 	@PutMapping("/update-employee")
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	public void doUpdate(@RequestBody Employee employee) {
 		repo.save(employee);
 	}
 
 	@DeleteMapping("/delete-employee/{empId}")
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	public void doDelete(@PathVariable("empId") int empId) {
 		repo.deleteById(empId);
 	}
 
 	@GetMapping("/read-employee/{empId}")
+	@PreAuthorize("hasRole('ROLE_ADMIN') or hasRole('ROLE_USER')")
 	public Employee doRead(@PathVariable("empId") int empId) {
 		return repo.findById(empId).get();
 	}
 
 	@GetMapping("/readAll-employee")
+	@PreAuthorize("hasRole('ROLE_ADMIN') or hasRole('ROLE_USER')")
 	public List<Employee> doReadAll() {
 		return ((List<Employee>) repo.findAll());
 	}
 
-	@GetMapping("/find-employee-name/{empName}")
-	public List<Employee> doFindByName(@PathVariable("empName") String empName) {
-		return ((List<Employee>) repo.findByEmpName(empName));
-	}
-
-	@DeleteMapping("/delete-employee-name/{empName}")
-	public void doDeleteByName(@PathVariable("empName") String empName) {
-		repo.deleteByEmpName(empName);
-	}
-
-	@GetMapping("/find-employee-salary/{empSalary}")
-	public List<Employee> doFindBySalary(@PathVariable("empSalary") int empSalary) {
-		return ((List<Employee>) repo.findByEmpSalary(empSalary));
-	}
-	
-	@DeleteMapping("/delete-employee-salary/{empSalary}")
-	public void doDeleteBySalary(@PathVariable("empSalary") int empSalary) {
-		repo.deleteByEmpSalary(empSalary);
-	}
+//	@GetMapping("/find-employee-name/{empName}")
+//	public List<Employee> doFindByName(@PathVariable("empName") String empName) {
+//		return ((List<Employee>) repo.findByEmpName(empName));
+//	}
+//
+//	@DeleteMapping("/delete-employee-name/{empName}")
+//	public void doDeleteByName(@PathVariable("empName") String empName) {
+//		repo.deleteByEmpName(empName);
+//	}
+//
+//	@GetMapping("/find-employee-salary/{empSalary}")
+//	public List<Employee> doFindBySalary(@PathVariable("empSalary") int empSalary) {
+//		return ((List<Employee>) repo.findByEmpSalary(empSalary));
+//	}
+//	
+//	@DeleteMapping("/delete-employee-salary/{empSalary}")
+//	public void doDeleteBySalary(@PathVariable("empSalary") int empSalary) {
+//		repo.deleteByEmpSalary(empSalary);
+//	}
 	
 }

@@ -23,16 +23,16 @@ export class DepartmentService {
     this.http.put(this.url + "update-department", department).subscribe();
     return "Department details updated Successfully!"
   }
-  deleteDepartment(eid: number) {
-    this.http.delete(this.url + "delete-department/" + eid).subscribe();
+  deleteDepartment(did: number) {
+    this.http.delete(this.url+ "delete-department/"+ did).subscribe();
     return "Department details deleted Successfully!"
   }
-  findDepartment(eid: number) {
-    this.http.get<Department>(this.url + "read-department/" + eid).subscribe(dep => this.department = dep);
+  findDepartment(did: number) {
+    this.http.get<Department>(this.url+"find-department/"+did).subscribe(dep => this.department = dep);
     return this.department;
   }
   findAllDepartment() {
-    this.http.get<Department[]>(this.url + "readAll-department").subscribe(depArr => this.departmentArr = depArr);
+    this.http.get<Department[]>(this.url + "findAll-department").subscribe(depArr => this.departmentArr = depArr);
     return this.departmentArr;
   }
 

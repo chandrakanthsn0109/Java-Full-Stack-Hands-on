@@ -17,11 +17,11 @@ public class Department {
 	@Column(name = "dno")
 	private int depNo;
 
-	@Column(name = "dname")
+	@Column(name = "dname", length = 20)
 	private String depName;
 
 	@OneToMany(mappedBy = "dep")
-	private List<Employee> employee = new ArrayList<>();
+//	private List<Employee> employee = new ArrayList<>();
 
 	public int getDepNo() {
 		return depNo;
@@ -39,14 +39,14 @@ public class Department {
 		this.depName = depName;
 	}
 
-	public List<Employee> getEmployee() {
-		return employee;
-	}
-
-	public void setEmployee(List<Employee> employee) {
-		this.employee = employee;
-	}
-	
+//	public List<Employee> getEmployee() {
+//		return employee;
+//	}
+//
+//	public void setEmployee(List<Employee> employee) {
+//		this.employee = employee;
+//	}
+//	
 	
 
 }
